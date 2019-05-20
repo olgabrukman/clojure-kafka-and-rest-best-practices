@@ -1,0 +1,15 @@
+{
+  "consumer-workers": 7,
+  "kafka-server": "kafka-20001-060-prod.eu1.company.com",
+  "kafka-port": 9092,
+  "kafka-topic": "matches",
+  "kafka-consumer-group-id": "jhsdfjkghjkdshfg",
+  "edge-port": 8080,
+  "postback-url": "http://service-29001-001-prod.eu1.company.com:6001/message",
+  "match-handler-buffer-size": 200,
+  "match-handler-workers": 7,
+  "max-inflight-postbacks": 10000,
+
+  "metric-reporters": "com.simple.metrics.kafka.DropwizardReporter",
+  "acks": "1"
+}

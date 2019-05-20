@@ -1,0 +1,37 @@
+{
+  "kafka-server": "kafka-20001-010-test.eu1.company.com",
+  "kafka-port": 9092,
+  "kafka-topic": "twitterads",
+  "kafka-producer-threads": 8,
+  "edge-port": 6001,
+  "postback-buffer-size": 200000,
+  "postback-threads": 10,
+  "producer-batch-size": 1000000,
+  "producer-buffer-memory": 50000000,
+  "producer-linger-ms": 500,
+  "producer-max-request-size": 10000000,
+  "producer-max-inflight": 100,
+  "print-producer-errors": "false",
+  "produce-small-json-test": "false",
+  "producers-num": 1,
+  "producer-retries": 0,
+  "producer-request-timeout-ms": 120000,
+  "producer-send-buffer-bytes": 262144,
+  "producer-max-block-ms": 120000,
+  "httpkit-queue": 20000,
+  "metric-reporters": "com.simple.metrics.kafka.DropwizardReporter",
+
+  "acks": "1",
+  "buffer.memory": "50000",
+  "retries": "0",
+  "max-in-flight-requests-per-connection": "5",
+  "batch-size": "16384",
+  "max-block-ms": "60000",
+  "max-request-size": "26214400",
+  "linger-ms": "0",
+  "request-timeout-ms": "30000",
+  "compression-type": "gzip",
+  "send-buffer-bytes": "131072"
+}
+
+
