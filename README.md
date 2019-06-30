@@ -12,17 +12,19 @@ Producer is implemented using components.
 
 How to record metrics for discrete variables, e.g. ,queue sizes:
 
-  (def active-count ["http" "worker-pool" "active-count"]) 
-  (def pool-size ["http" "worker-pool" "pool-size"]) 
-  (def task-count ["http" "worker-pool" "task-count"]) 
-  (def completed-task-count ["http" "worker-pool" "completed-task-count"])
+```clojure
+(def active-count ["http" "worker-pool" "active-count"]) 
+(def pool-size ["http" "worker-pool" "pool-size"]) 
+(def task-count ["http" "worker-pool" "task-count"]) 
+(def completed-task-count ["http" "worker-pool" "completed-task-count"])
 
 (defn- instrument-worker-pool [^ThreadPoolExecutor worker-pool] 
 (at-at/every 1000 
    #(do (gauges/gauge-fn active-count (fn [] (.getActiveCount worker-pool))) 
         (gauges/gauge-fn pool-size (fn [] (.getPoolSize worker-pool))) 
         (gauges/gauge-fn task-count (fn [] (.getTaskCount worker-pool))) 
-        (gauges/gauge-fn completed-task-count (fn [] (.getCompletedTaskCount worker-pool)))) (at-at/mk-pool)))`
+        (gauges/gauge-fn completed-task-count (fn [] (.getCompletedTaskCount worker-pool)))) (at-at/mk-pool)))
+```
 
 Consumer Design Details
 ----
